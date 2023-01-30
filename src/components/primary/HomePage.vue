@@ -1,21 +1,28 @@
 <template>
-    <!--   <div class="container-home">
-        <sidebar-section :navLinks="navLinks"></sidebar-section>
-
-        <div class="main-content">
-            <feed-section :postData="posts" :profilesData="profiles">
-            </feed-section>
-
-            <suggested-section :profilesData="profiles"> </suggested-section>
-        </div>
-    </div> -->
-
     <div class="container-home">
         <sidebar-section :navLinks="navLinks"></sidebar-section>
+
         <div class="main-content">
             <feed-section :postData="posts" :profilesData="profiles">
             </feed-section>
             <suggested-section :profilesData="profiles"> </suggested-section>
+
+            <!-- Viene mostrato su mobile -->
+            <div class="mobile-header">
+                <img src="@/assets/boolgram-asset/logoDesktop.svg" />
+
+                <div class="input-container">
+                    <font-awesome-icon icon="fa-regular fa-heart icon" />
+                </div>
+            </div>
+
+            <!-- Viene mostrato su mobile -->
+            <div class="mobile-sidebar">
+                <font-awesome-icon
+                    v-for="(navLink, index) in navLinks.slice(0, 4)"
+                    :key="index"
+                    :icon="navLink.icon" />
+            </div>
         </div>
     </div>
 </template>
@@ -85,25 +92,92 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../scss/resources";
+
 .container-home {
     height: 100vh;
     width: auto;
-
-    background-color: #beb7b7;
+    position: relative;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     .main-content {
-        background-color: rgb(255, 251, 0);
         display: flex;
         justify-content: center;
-        gap: 3rem;
+
+        background-color: $color-gray-light;
 
         width: 100%;
         height: 100vh;
         overflow-y: scroll;
+
+        @media (max-width: 768px) {
+            padding: 4rem 0rem;
+        }
+
+        .mobile-header {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 4rem;
+            background-color: white;
+
+            border-bottom: 0.09rem solid rgb(215, 209, 209);
+
+            padding: 0.7rem 1.5rem;
+
+            display: flex;
+            justify-content: space-between;
+
+            z-index: 10;
+
+            .input-container {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .fa-heart {
+                    font-size: 1.6rem;
+                    color: black;
+                }
+            }
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+
+        .mobile-sidebar {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 3.4rem;
+            align-items: center;
+            background-color: white;
+
+            border-top: 0.09rem solid rgb(215, 209, 209);
+
+            display: flex;
+            justify-content: space-around;
+
+            z-index: 10;
+
+            .fa-house,
+            .fa-paper-plane,
+            .fa-magnifying-glass,
+            .fa-compass {
+                font-size: 1.5rem;
+            }
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
     }
 }
 </style>

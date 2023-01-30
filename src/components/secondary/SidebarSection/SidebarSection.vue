@@ -70,13 +70,12 @@ export default {
 .sidebar-container {
     height: 100vh;
     width: fit-content;
-    background-color: rgb(184, 32, 32);
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    border-right: 0.05rem solid rgb(197, 189, 189);
+    border-right: 0.09rem solid rgb(215, 209, 209);
 
     .logo-mobile {
         width: 3.5rem;
@@ -85,6 +84,10 @@ export default {
     .logo-desktop {
         width: 12rem;
         padding: 2rem 2rem;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
     }
 }
 </style>

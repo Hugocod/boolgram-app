@@ -27,9 +27,6 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 // Import Swiper styles
 import "swiper/css";
 
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
@@ -58,15 +55,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+/* @import "../../../scss/resources"; */
+
 .stories-container {
-    width: 30rem;
-    margin: auto 0;
+    width: 27rem;
 
     background-color: white;
     border-radius: 0.5rem;
-    border: 0.05rem solid gray;
 
     padding: 0.7rem;
+
+    border: 0.09rem solid rgb(215, 209, 209);
 
     text-align: center;
 }

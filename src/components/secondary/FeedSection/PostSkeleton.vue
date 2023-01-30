@@ -29,7 +29,7 @@ export default {
     border-radius: 0.5rem;
     border: 0.05rem solid gray;
 
-    width: 30rem;
+    width: 27rem;
 
     .text-block {
         & > div:last-child {

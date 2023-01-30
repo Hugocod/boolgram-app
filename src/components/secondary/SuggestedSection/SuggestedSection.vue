@@ -50,7 +50,11 @@ export default {
     @import "../../../scss/resources";
     width: 400px;
     /* background-color: rgb(43, 255, 0); */
-    padding: 3rem 0;
+    padding: 3rem 2rem;
+
+    @media (max-width: 1000px) {
+        display: none;
+    }
 
     button {
         background-color: rgba(255, 255, 255, 0);

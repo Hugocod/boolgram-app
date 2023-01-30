@@ -176,7 +176,8 @@ export default {
     background-color: white;
 
     border-radius: 0.5rem;
-    border: 0.05rem solid gray;
+
+    @include border-thin;
 
     width: 100%;
 
@@ -243,7 +244,7 @@ export default {
 
         padding: 0.8rem;
 
-        border-top: 1px solid gray;
+        border-top: 1px solid rgb(215, 209, 209);
 
         form {
             width: 100%;

@@ -1,5 +1,5 @@
 <template>
-    <div class="spk-container">
+    <div id="spk-container">
         <div>
             <div class="skeleton-image">
                 <span class="loader"></span>
@@ -23,7 +23,9 @@ export default {
 <style scopes lang="scss">
 @import "../../../scss/resources";
 
-.spk-container {
+#spk-container {
+    padding: 0.5rem 0;
+
     & > div:first-child {
         display: flex;
         align-items: center;
@@ -34,8 +36,6 @@ export default {
             width: 50%;
         }
     }
-
-    padding: 0.3rem 0;
 
     .skeleton {
         background-color: $color-gray-light;
