@@ -1,7 +1,7 @@
 <template>
     <!--  La barra laterale visualizza un logo e una serie di link di navigazione, che vengono generati dinamicamente dalla proprietà "navLinks". Ciascun link è rappresentato da un'icona e un testo,
     entrambi specificati tramite slot. -->
-    <div class="sidebar">
+    <div class="sidebar-container">
         <div>
             <div class="logo-mobile" v-if="width < 1264">
                 <img src="@/assets/boolgram-asset/logoMobile.svg" />
@@ -67,10 +67,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sidebar {
-    height: 100%;
+.sidebar-container {
+    height: 100vh;
     width: fit-content;
-    background-color: white;
+    background-color: rgb(184, 32, 32);
 
     display: flex;
     flex-direction: column;
@@ -83,7 +83,7 @@ export default {
         padding: 0.8rem;
     }
     .logo-desktop {
-        width: 8rem;
+        width: 12rem;
         padding: 2rem 2rem;
     }
 }

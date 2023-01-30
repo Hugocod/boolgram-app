@@ -171,27 +171,6 @@ export default {
 <style scoped lang="scss">
 @import "../../../scss/resources";
 
-.fa-ellipsis,
-.fa-heart,
-.fa-comment,
-.fa-paper-plane,
-.fa-bookmark,
-.fa-face-smile {
-    font-size: 1.4rem;
-}
-
-.fa-face-smile {
-    margin-right: 0.8rem;
-}
-
-.fa-ellipsis {
-    font-size: 1.1rem;
-}
-
-*:disabled {
-    opacity: 0.4;
-}
-
 .post-container {
     margin: 4rem 0;
     background-color: white;
@@ -322,6 +301,27 @@ export default {
                 word-break: break-all;
             }
         }
+    }
+
+    .fa-ellipsis,
+    .fa-heart,
+    .fa-comment,
+    .fa-paper-plane,
+    .fa-bookmark,
+    .fa-face-smile {
+        font-size: 1.4rem;
+    }
+
+    .fa-face-smile {
+        margin-right: 0.8rem;
+    }
+
+    .fa-ellipsis {
+        font-size: 1.1rem;
+    }
+
+    *:disabled {
+        opacity: 0.4;
     }
 }
 </style>

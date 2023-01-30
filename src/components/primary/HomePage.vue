@@ -1,15 +1,28 @@
 <template>
-    <div class="container-home">
+    <!--   <div class="container-home">
         <sidebar-section :navLinks="navLinks"></sidebar-section>
 
-        <feed-section v-if="posts.isDataLoaded" :postData="posts.data">
-        </feed-section>
+        <div class="main-content">
+            <feed-section :postData="posts" :profilesData="profiles">
+            </feed-section>
+
+            <suggested-section :profilesData="profiles"> </suggested-section>
+        </div>
+    </div> -->
+
+    <div class="container-home">
+        <sidebar-section :navLinks="navLinks"></sidebar-section>
+        <div class="main-content">
+            <feed-section :postData="posts" :profilesData="profiles">
+            </feed-section>
+        </div>
     </div>
 </template>
 
 <script>
 import FeedSection from "../secondary/FeedSection/FeedSection.vue";
 import SidebarSection from "../secondary/SidebarSection/SidebarSection.vue";
+/* import SuggestedSection from "../secondary/SuggestedSection/SuggestedSection.vue"; */
 
 import axios from "axios";
 export default {
@@ -41,13 +54,13 @@ export default {
         //chiamate api
 
         /* simula il ritardo */
-        /*  setTimeout(() => {
+        setTimeout(() => {
             this.getData(this.apiPost, this.posts);
             this.getData(this.apiProfiles, this.profiles);
-        }, 1000); */
+        }, 3000);
 
-        this.getData(this.apiPost, this.posts);
-        this.getData(this.apiProfiles, this.profiles);
+        /*  this.getData(this.apiPost, this.posts);
+        this.getData(this.apiProfiles, this.profiles); */
     },
     //
     methods: {
@@ -73,8 +86,21 @@ export default {
 <style lang="scss" scoped>
 .container-home {
     height: 100vh;
-    /* background-color: #beb7b7; */
+    width: auto;
+
+    background-color: #beb7b7;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main-content {
+        background-color: rgb(255, 251, 0);
+        display: flex;
+
+        width: 100%;
+        height: 100vh;
+        overflow-y: scroll;
+    }
 }
 </style>
