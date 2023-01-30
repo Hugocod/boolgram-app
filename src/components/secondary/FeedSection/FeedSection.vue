@@ -32,5 +32,6 @@ export default {
 
 <style lang="scss" scoped>
 .container-feed {
+    padding: 1.6rem 0;
 }
 </style>

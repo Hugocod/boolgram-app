@@ -1,6 +1,6 @@
 <template>
-    <div class="sp-container">
-        <div>
+    <div id="sp-container">
+        <div class="picture-block">
             <img :src="picture" />
             <div>
                 <a href="">{{ name }}</a>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    name: "ProfileBlock",
+    name: "SuggestedProfile",
     props: { picture: String, name: String },
 };
 </script>
@@ -22,15 +22,15 @@ export default {
 <style scoped lang="scss">
 @import "../../../scss/resources";
 
-.sp-container {
+#sp-container {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
 
-    & div:first-child {
+    .picture-block {
         display: flex;
-        justify-content: center;
         align-items: center;
+        width: 100%;
         gap: 1rem;
     }
 
@@ -41,8 +41,8 @@ export default {
 
     img {
         border-radius: 50%;
-        aspect-ratio: 4/4;
         width: 2.2rem;
+        height: 2.2rem;
     }
 
     button {

@@ -15,6 +15,7 @@
         <div class="main-content">
             <feed-section :postData="posts" :profilesData="profiles">
             </feed-section>
+            <suggested-section :profilesData="profiles"> </suggested-section>
         </div>
     </div>
 </template>
@@ -22,11 +23,11 @@
 <script>
 import FeedSection from "../secondary/FeedSection/FeedSection.vue";
 import SidebarSection from "../secondary/SidebarSection/SidebarSection.vue";
-/* import SuggestedSection from "../secondary/SuggestedSection/SuggestedSection.vue"; */
+import SuggestedSection from "../secondary/SuggestedSection/SuggestedSection.vue";
 
 import axios from "axios";
 export default {
-    components: { SidebarSection, FeedSection },
+    components: { SidebarSection, FeedSection, SuggestedSection },
     name: "HomePage",
     data() {
         return {
@@ -97,6 +98,8 @@ export default {
     .main-content {
         background-color: rgb(255, 251, 0);
         display: flex;
+        justify-content: center;
+        gap: 3rem;
 
         width: 100%;
         height: 100vh;
