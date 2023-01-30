@@ -34,5 +34,13 @@ export default {
 .container-feed {
     padding: 1.6rem 0;
     width: 27rem;
+
+    @media (max-width: 470px) {
+        width: 20rem;
+    }
+
+    @media (max-width: 340px) {
+        width: 18rem;
+    }
 }
 </style>

@@ -2,9 +2,9 @@
     <div class="stories-container">
         <swiper
             :spaceBetween="10"
-            :slidesPerView="5"
+            :slidesPerView="calculateSlidesNumber"
             :pagination="false"
-            :navigation="true"
+            :navigation="false"
             :modules="modules"
             class="mySwiper">
             <swiper-slide
@@ -41,15 +41,42 @@ export default {
         profilesData: Object,
     },
     data() {
-        return {};
+        return {
+            numberOfSlides: "5",
+            width: "",
+        };
     },
     setup() {
         return {
             modules: [Autoplay, Pagination, Navigation],
         };
     },
+    //
     mounted() {
-        console.log(this.profilesData);
+        this.width = window.innerWidth;
+        window.addEventListener("resize", this.handleResize);
+    },
+    //
+    beforeUnmount() {
+        window.removeEventListener("resize", this.handleResize);
+    },
+    //
+    methods: {
+        handleResize() {
+            this.width = window.innerWidth;
+        },
+    },
+    //
+    computed: {
+        calculateSlidesNumber() {
+            if (this.width > 660) {
+                return 5;
+            } else if (this.width < 470) {
+                return 3;
+            } else {
+                return 4;
+            }
+        },
     },
 };
 </script>
@@ -59,6 +86,14 @@ export default {
 
 .stories-container {
     width: 27rem;
+
+    @media (max-width: 470px) {
+        width: 20rem;
+    }
+
+    @media (max-width: 340px) {
+        width: 18rem;
+    }
 
     background-color: white;
     border-radius: 0.5rem;

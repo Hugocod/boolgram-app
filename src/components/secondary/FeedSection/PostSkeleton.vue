@@ -31,6 +31,14 @@ export default {
 
     width: 27rem;
 
+    @media (max-width: 470px) {
+        width: 20rem;
+    }
+
+    @media (max-width: 340px) {
+        width: 18rem;
+    }
+
     .text-block {
         & > div:last-child {
             width: 50%;

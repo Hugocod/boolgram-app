@@ -172,7 +172,7 @@ export default {
 @import "../../../scss/resources";
 
 .post-container {
-    margin: 4rem 0;
+    margin: 1.1rem 0;
     background-color: white;
 
     border-radius: 0.5rem;
@@ -180,6 +180,13 @@ export default {
     @include border-thin;
 
     width: 100%;
+    @media (max-width: 470px) {
+        width: 20rem;
+    }
+
+    @media (max-width: 340px) {
+        width: 18rem;
+    }
 
     font-size: 0.9rem;
     font-weight: 400;

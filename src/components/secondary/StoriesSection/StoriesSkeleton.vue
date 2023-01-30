@@ -33,6 +33,7 @@ export default {
 
 .container {
     width: 100%;
+
     background-color: white;
 
     display: flex;

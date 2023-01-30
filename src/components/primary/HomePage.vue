@@ -3,25 +3,28 @@
         <sidebar-section :navLinks="navLinks"></sidebar-section>
 
         <div class="main-content">
-            <feed-section :postData="posts" :profilesData="profiles">
-            </feed-section>
-            <suggested-section :profilesData="profiles"> </suggested-section>
+            <div class="main-wrapper">
+                <feed-section :postData="posts" :profilesData="profiles">
+                </feed-section>
+                <suggested-section :profilesData="profiles">
+                </suggested-section>
 
-            <!-- Viene mostrato su mobile -->
-            <div class="mobile-header">
-                <img src="@/assets/boolgram-asset/logoDesktop.svg" />
+                <!-- Viene mostrato su mobile -->
+                <div class="mobile-header">
+                    <img src="@/assets/boolgram-asset/logoDesktop.svg" />
 
-                <div class="input-container">
-                    <font-awesome-icon icon="fa-regular fa-heart icon" />
+                    <div class="input-container">
+                        <font-awesome-icon icon="fa-regular fa-heart icon" />
+                    </div>
                 </div>
-            </div>
 
-            <!-- Viene mostrato su mobile -->
-            <div class="mobile-sidebar">
-                <font-awesome-icon
-                    v-for="(navLink, index) in navLinks.slice(0, 4)"
-                    :key="index"
-                    :icon="navLink.icon" />
+                <!-- Viene mostrato su mobile -->
+                <div class="mobile-sidebar">
+                    <font-awesome-icon
+                        v-for="(navLink, index) in navLinks.slice(0, 4)"
+                        :key="index"
+                        :icon="navLink.icon" />
+                </div>
             </div>
         </div>
     </div>
@@ -102,25 +105,29 @@ export default {
 
     display: flex;
     justify-content: center;
-    align-items: center;
 
     .main-content {
-        /* position: fixed;
-        top: 0;
-        right: 0; */
+        background-color: $color-gray-light;
 
         display: flex;
         justify-content: center;
 
-        background-color: $color-gray-light;
-
         width: 100%;
         height: 100vh;
+
         overflow-y: scroll;
         overflow-x: hidden;
 
         @media (max-width: 768px) {
             padding: 4rem 0rem;
+        }
+
+        .main-wrapper {
+            height: fit-content;
+
+            display: flex;
+
+            width: fit-content;
         }
 
         .mobile-header {
@@ -133,12 +140,15 @@ export default {
 
             border-bottom: 0.09rem solid rgb(215, 209, 209);
 
-            padding: 0.7rem 1.5rem;
-
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
 
             z-index: 10;
+
+            img {
+                scale: 0.7;
+                transform-origin: left;
+            }
 
             .input-container {
                 height: 100%;
