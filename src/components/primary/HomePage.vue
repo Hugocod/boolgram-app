@@ -96,6 +96,7 @@ export default {
 
 .container-home {
     height: 100vh;
+
     width: auto;
     position: relative;
 
@@ -104,6 +105,10 @@ export default {
     align-items: center;
 
     .main-content {
+        /* position: fixed;
+        top: 0;
+        right: 0; */
+
         display: flex;
         justify-content: center;
 
@@ -112,6 +117,7 @@ export default {
         width: 100%;
         height: 100vh;
         overflow-y: scroll;
+        overflow-x: hidden;
 
         @media (max-width: 768px) {
             padding: 4rem 0rem;
@@ -119,7 +125,7 @@ export default {
 
         .mobile-header {
             width: 100%;
-            position: absolute;
+            position: fixed;
             top: 0;
             right: 0;
             height: 4rem;
@@ -153,7 +159,7 @@ export default {
 
         .mobile-sidebar {
             width: 100%;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             right: 0;
             height: 3.4rem;
