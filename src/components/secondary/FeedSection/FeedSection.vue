@@ -12,11 +12,6 @@ import PostBlock from "./PostBlock.vue";
 
 export default {
     name: "FeedSection",
-    data() {
-        return {
-            localPostData: { ...this.postData },
-        };
-    },
     components: { PostBlock },
     props: { postData: Object },
 };
