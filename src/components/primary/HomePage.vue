@@ -1,13 +1,19 @@
 <template>
-    <div class="container">
+    <div class="container-home">
         <sidebar-section :navLinks="navLinks"></sidebar-section>
+
+        <feed-section v-if="posts.isDataLoaded" :postData="posts.data">
+        </feed-section>
     </div>
 </template>
 
 <script>
+import FeedSection from "../secondary/FeedSection/FeedSection.vue";
 import SidebarSection from "../secondary/SidebarSection/SidebarSection.vue";
+
+import axios from "axios";
 export default {
-    components: { SidebarSection },
+    components: { SidebarSection, FeedSection },
     name: "HomePage",
     data() {
         return {
@@ -25,17 +31,49 @@ export default {
                 { text: "aggiungi", icon: "fa-regular fa-square-plus icon" },
             ],
 
-            apiProfiles: "https://flynn.boolean.careers/exercises/api/boolgram/profiles",
-            apiPost: "https://flynn.boolean.careers/exercises/api/boolgram/posts",
+            apiProfiles:
+                "https://flynn.boolean.careers/exercises/api/boolgram/profiles",
+            apiPost:
+                "https://flynn.boolean.careers/exercises/api/boolgram/posts",
         };
+    },
+    mounted() {
+        //chiamate api
+
+        /* simula il ritardo */
+        /*  setTimeout(() => {
+            this.getData(this.apiPost, this.posts);
+            this.getData(this.apiProfiles, this.profiles);
+        }, 1000); */
+
+        this.getData(this.apiPost, this.posts);
+        this.getData(this.apiProfiles, this.profiles);
+    },
+    //
+    methods: {
+        // La seguente funzione accetta come parametri:
+        //- url dell'endpoint
+        //- variabile in cui finiscono i dati
+        getData(url, dataContainer) {
+            axios
+                .get(url)
+                .then((response) => {
+                    console.log(response.data);
+                    dataContainer.data = response.data;
+                    dataContainer.isDataLoaded = true;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
     },
 };
 </script>
 
 <style lang="scss" scoped>
-.container {
+.container-home {
     height: 100vh;
-    background-color: #beb7b7;
+    /* background-color: #beb7b7; */
 
     display: flex;
 }
