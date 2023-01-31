@@ -2,16 +2,21 @@
     <div class="stories-container">
         <swiper
             :spaceBetween="10"
+            :autoplay="true"
+            :delay="1"
+            :pauseOnMouseEnter="false"
             :slidesPerView="calculateSlidesNumber"
             :pagination="false"
-            :navigation="false"
+            :navigation="fasle"
             :modules="modules"
             class="mySwiper">
             <swiper-slide
                 v-for="(profile, index) in profilesData.data"
                 :key="index">
                 <div class="story-thumb">
-                    <img :src="profile.profile_picture" />
+                    <div class="gradient-circle">
+                        <img :src="profile.profile_picture" />
+                    </div>
                     <div class="name-container">
                         <a>{{ profile.profile_name }}</a>
                     </div>
@@ -85,7 +90,7 @@ export default {
 /* @import "../../../scss/resources"; */
 
 .stories-container {
-    width: 27rem;
+    width: 29rem;
 
     @media (max-width: 470px) {
         width: 20rem;
@@ -109,12 +114,80 @@ img {
     width: 100%;
     aspect-ratio: 4 / 4;
 
-    outline: 3px solid red;
-    outline-offset: 3px;
+    border: 2.7px solid white;
 }
 
 .story-thumb {
-    padding: 0.7rem;
+    padding: 0.2rem;
+
+    .gradient-circle {
+        background-color: aqua;
+        padding: 0.2rem;
+        border-radius: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /*  instagram gradient */
+        background: -webkit-radial-gradient(
+                32% 106%,
+                circle cover,
+                rgb(255, 225, 125) 0%,
+                rgb(255, 205, 105) 10%,
+                rgb(250, 145, 55) 28%,
+                rgb(235, 65, 65) 42%,
+                transparent 82%
+            ),
+            -webkit-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(
+                            195,
+                            60,
+                            190
+                        )
+                        58%);
+        background: -moz-radial-gradient(
+                32% 106%,
+                circle cover,
+                rgb(255, 225, 125) 0%,
+                rgb(255, 205, 105) 10%,
+                rgb(250, 145, 55) 28%,
+                rgb(235, 65, 65) 42%,
+                transparent 82%
+            ),
+            -moz-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190)
+                        58%);
+        background: -ms-radial-gradient(
+                32% 106%,
+                circle cover,
+                rgb(255, 225, 125) 0%,
+                rgb(255, 205, 105) 10%,
+                rgb(250, 145, 55) 28%,
+                rgb(235, 65, 65) 42%,
+                transparent 82%
+            ),
+            -ms-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190)
+                        58%);
+        background: -o-radial-gradient(
+                32% 106%,
+                circle cover,
+                rgb(255, 225, 125) 0%,
+                rgb(255, 205, 105) 10%,
+                rgb(250, 145, 55) 28%,
+                rgb(235, 65, 65) 42%,
+                transparent 82%
+            ),
+            -o-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190)
+                        58%);
+        background: radial-gradient(
+                circle farthest-corner at 32% 106%,
+                rgb(255, 225, 125) 0%,
+                rgb(255, 205, 105) 10%,
+                rgb(250, 145, 55) 28%,
+                rgb(235, 65, 65) 42%,
+                transparent 82%
+            ),
+            linear-gradient(135deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+    }
 
     .name-container {
         overflow: hidden;
@@ -124,6 +197,9 @@ img {
 
         a {
             color: red($color: #000000);
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: black;
         }
     }
 }

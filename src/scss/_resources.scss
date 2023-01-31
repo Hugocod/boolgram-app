@@ -9,7 +9,6 @@ $color-blue: rgba(23, 117, 191, 1);
 $color-blue-light: rgb(37, 153, 242);
 $color-gray-regular: rgba(171, 171, 171, 1);
 $color-gray-darker: rgba(88, 88, 88);
-
 $color-black: black;
 $color-white: white;
 $color-gray-light: rgb(250, 250, 250);
@@ -44,59 +43,4 @@ $color-gray-light: rgb(250, 250, 250);
     text-transform: capitalize;
 }
 
-@mixin wrapper-size {
-    max-width: 1350px;
-    margin: 0 auto;
-    @media screen and (max-width: 1350px) {
-        width: 90%;
-    }
-}
-
-@mixin title-big {
-    font-size: 4rem;
-    color: $color-black;
-    text-transform: uppercase;
-    font-weight: 900;
-    text-align: center;
-}
-
-@mixin title-regular {
-    font-size: 2rem;
-    font-weight: 900;
-    color: $color-blue;
-    text-align: center;
-}
-
-@mixin title-small {
-    font-size: 1rem;
-    color: $color-gray-darker;
-    text-transform: uppercase;
-    font-weight: 900;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-@mixin title-list {
-    font-size: 1.2rem;
-    color: $color-black;
-    text-transform: uppercase;
-    font-weight: 900;
-}
-
-@mixin btn-primary {
-    background-color: $color-blue;
-    color: $color-white;
-    padding: 0.8rem 1.8rem;
-    border-radius: 3rem;
-    text-transform: uppercase;
-    font-weight: 900;
-    white-space: nowrap;
-
-    transition: all 0.4s ease-in-out;
-
-    &:hover {
-        background-color: $color-blue-light;
-        cursor: pointer;
-    }
-}
 /////////////////////////////////////////////////////////////////// MIXINS  -------- /
