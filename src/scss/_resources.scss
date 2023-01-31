@@ -28,6 +28,13 @@ $color-gray-light: rgb(250, 250, 250);
     color: rgb(128, 128, 128);
 }
 
+@mixin text-small-capitalized {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    padding: 1rem 0;
+    color: rgb(128, 128, 128);
+}
+
 @mixin border-thin {
     border: 0.09rem solid rgb(215, 209, 209);
 }

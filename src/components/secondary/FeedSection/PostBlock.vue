@@ -238,9 +238,7 @@ export default {
 
     .post-date {
         p {
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            padding: 1rem 0;
+            @include text-small-capitalized;
         }
     }
 
@@ -294,6 +292,7 @@ export default {
         & > div:first-child {
             padding-bottom: 0.5rem;
             @include text-medium;
+            cursor: pointer;
         }
 
         .comment-container {

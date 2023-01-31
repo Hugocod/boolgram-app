@@ -33,7 +33,7 @@
                 :key="index"></profile-skeleton>
         </div>
 
-        <p>developer by hugo with love</p>
+        <p>IG clone by hugo with love ( educational purposes)</p>
     </div>
 </template>
 
@@ -100,6 +100,10 @@ export default {
         padding: 1rem 0rem;
         @include text-medium;
         font-weight: 600;
+    }
+
+    p {
+        @include text-small-capitalized;
     }
 }
 </style>
