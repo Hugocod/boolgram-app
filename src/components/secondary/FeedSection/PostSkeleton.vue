@@ -29,7 +29,7 @@ export default {
     border-radius: 0.5rem;
     border: 0.05rem solid gray;
 
-    width: 27rem;
+    width: 29rem;
 
     @media (max-width: 470px) {
         width: 20rem;

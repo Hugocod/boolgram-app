@@ -3,10 +3,12 @@
         <div class="loggedUser-row">
             <div>
                 <img
-                    src="https://newprofilepic2.photo-cdn.net//assets/images/article/profile.jpg" />
+                    src="https://res.cloudinary.com/dflyrzhj9/image/upload/v1671628728/high-min_yynwgh.jpg" />
                 <div>
-                    <a href="">Hugo_d_ev</a>
-                    <a href="">Ugo Medioli</a>
+                    <a href="https://www.hu-go.online/">Ugo Medioli</a>
+                    <a href="https://www.hu-go.online/" target="_blank"
+                        >www.hu-go.online</a
+                    >
                 </div>
             </div>
 
@@ -14,7 +16,7 @@
         </div>
 
         <div class="showAll-section">
-            <h4>suggerimenti per te</h4>
+            <h4>Suggerimenti per te</h4>
             <a>Mostra Tutti</a>
         </div>
 
@@ -46,8 +48,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../scss/resources";
 .suggested-container {
-    @import "../../../scss/resources";
     width: 400px;
     /* background-color: rgb(43, 255, 0); */
     padding: 3rem 2rem;
@@ -57,28 +59,11 @@ export default {
     }
 
     button {
-        background-color: rgba(255, 255, 255, 0);
-        border: none;
-        color: #000;
-        font-size: 0.8rem;
-        font-weight: 600;
-
-        color: #34a0f7;
-        text-transform: capitalize;
+        @include text-btn;
     }
 
     a {
-        text-decoration: none;
-        display: block;
-        font-weight: 600;
-        font-size: 0.9rem;
-        color: black;
-    }
-
-    span {
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: rgb(144, 141, 141);
+        @include text-strong;
     }
 
     .loggedUser-row {
@@ -90,13 +75,15 @@ export default {
             justify-content: center;
             align-items: center;
             gap: 1rem;
+
+            a:last-child {
+                @include text-medium;
+            }
         }
 
         a {
             display: block;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: black;
+            @include text-strong;
         }
 
         img {
@@ -109,6 +96,10 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        padding: 1rem 0rem;
+        @include text-medium;
+        font-weight: 600;
     }
 }
 </style>

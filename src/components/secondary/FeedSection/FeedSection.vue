@@ -33,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .container-feed {
     padding: 1.6rem 0;
-    width: 27rem;
+    width: 29rem;
 
     @media (max-width: 470px) {
         width: 20rem;

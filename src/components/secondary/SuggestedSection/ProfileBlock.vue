@@ -39,6 +39,10 @@ export default {
         @include text-strong;
     }
 
+    span {
+        @include text-medium;
+    }
+
     img {
         border-radius: 50%;
         width: 2.2rem;
