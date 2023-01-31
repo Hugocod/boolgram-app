@@ -1,24 +1,7 @@
 # boolgram-app
 
-## Project setup
-```
-npm install
-```
+An instagram web clone with the power of vue.js.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Stack: Axios, JS, SCSS, Vue
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+😎Demo here : https://boolgram-by-hugo.netlify.app
